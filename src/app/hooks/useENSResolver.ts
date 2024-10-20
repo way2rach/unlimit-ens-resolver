@@ -29,7 +29,7 @@ export function useENSResolver(input: string) {
           if (resolvedAddress) {
             setAddress(resolvedAddress);
           } else {
-            setError('ENS name could not be resolved.');
+            setError('No address found associated with this ENS. Try again.');
           }
         } else {
           // Otherwise, try to validate the input as an Ethereum address

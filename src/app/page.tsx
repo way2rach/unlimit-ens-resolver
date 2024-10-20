@@ -114,7 +114,7 @@ export default function Home() {
 
           {/* Input section */}
           <div className="flex flex-col items-center">
-            <div className="w-full">
+            <div className="w-full mt-14">
               <label className="block text-gray-700 text-lg font-bold mb-2">
                 Enter your address
               </label>
