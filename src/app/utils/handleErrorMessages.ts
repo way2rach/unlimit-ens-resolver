@@ -7,12 +7,16 @@ export function handleErrorMessagesFactory(
   }) {
     const { err, customMessage } = errorOptions;
     if (err) {
+      // @ts-ignore
       if (err.data) {
         if (
+          // @ts-ignore
           err.data.message.includes("execution reverted:")
         ) {
+          // @ts-ignore
           setter(err.data.message.replace("execution reverted:", ""));
         } else {
+          // @ts-ignore
           setter(err.data.message);
         }
       } else {

@@ -68,6 +68,7 @@ export default function Home() {
     if (address) {
       const instance = new GateFiSDK({
         merchantId: "922f92b0-9cc5-462d-a1e5-ec07c91e4f47",
+        // @ts-ignore
         displayMode: "overlay",
         nodeSelector: "#overlay-button",
         isSandbox: true,
