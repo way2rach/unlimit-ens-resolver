@@ -116,7 +116,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <div className="w-full">
               <label className="block text-gray-700 text-lg font-bold mb-2">
-                Enter the receiving address
+                Enter your address
               </label>
               <input
                 value={inputValue}
