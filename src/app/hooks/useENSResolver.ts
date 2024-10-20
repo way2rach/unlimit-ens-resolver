@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
+import {handleErrorMessagesFactory} from "@/app/utils/handleErrorMessages";
 
 // Create the ENS resolver hook
 export function useENSResolver(input: string) {
   const [address, setAddress] = useState<string | null>(null);
+  const [localError, setLocalError] = useState("");
+  const handleErrorMessages = handleErrorMessagesFactory(setLocalError);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +44,7 @@ export function useENSResolver(input: string) {
           }
         }
       } catch (err) {
-        setError('Error resolving ENS name or validating address.');
+        setLocalError('Error resolving ENS name or validating address.');
       } finally {
         setLoading(false);
       }

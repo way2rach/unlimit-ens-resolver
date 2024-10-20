@@ -91,7 +91,6 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         {localError && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-5">
-            <strong className="font-bold">Error: </strong>
             <span className="block sm:inline">{localError}</span>
           </div>
         )}
@@ -131,12 +130,12 @@ export default function Home() {
               />
             </div>
 
-            {loading && <p className="text-blue-500">Resolving ENS...</p>}
+            {loading && <p className="text-blue-500 mt-2">Checking if ENS exists...</p>}
             {error && <p className="text-red-500 mt-4">{error}</p>}
           </div>
 
           <button id="overlay-button"
-                  className="mt-8 px-6 py-3 bg-green-500 text-white rounded-full shadow-lg hover:shadow-green-400 transition ease-in-out duration-300">
+                  className="mt-8 px-10 py-3 bg-green-500 text-white rounded-full shadow-lg hover:shadow-green-400 transition ease-in-out duration-300">
             Buy Crypto
           </button>
         </div>
