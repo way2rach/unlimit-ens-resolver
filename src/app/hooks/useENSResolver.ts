@@ -10,6 +10,9 @@ export function useENSResolver(input: string) {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
+  // Provide the desired RPC here
+  const rpcPoint = 'https://ethereum.blockpi.network/v1/rpc/public';
+
   useEffect(() => {
     // If there's no input, reset the states
     if (!input) {
@@ -24,7 +27,7 @@ export function useENSResolver(input: string) {
       setAddress(null);
 
       try {
-        const provider = new ethers.JsonRpcProvider('https://ethereum.blockpi.network/v1/rpc/public');
+        const provider = new ethers.JsonRpcProvider(rpcPoint);
 
         // If the input ends with `.eth`, attempt ENS resolution
         if (input.endsWith('.eth')) {
